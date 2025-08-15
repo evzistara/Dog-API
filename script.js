@@ -1,7 +1,6 @@
 const dogFact = document.querySelector('.dog-fact')
 const btn = document.querySelector('button')
 
-
 btn.addEventListener('click', fetchDogFact)
 
 function fetchDogFact(){
