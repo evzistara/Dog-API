@@ -3,16 +3,10 @@ const btn = document.querySelector('button')
 
 btn.addEventListener('click', fetchDogFact)
 
-function fetchDogFact(){
-fetch("https://dogapi.dog/api/v2/facts")
-.then(res => res.json())
-.then(data => 
-    {
-        let newFact = data.data[0].attributes.body;
-        dogFact.textContent = newFact;
-
+async function fetchDogFact(){
+const response = await fetch("https://dogapi.dog/api/v2/facts");
+const data = await response.json();
+let newFact = data.data[0].attributes.body;
+dogFact.textContent = newFact;
     }
-)
-
-}
 
